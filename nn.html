@@ -1,12 +1,12 @@
 <script>
     window.onload = function () {
         document.getElementById("trainingMode").checked = true;
-        document.getElementById("hdoutput").innerHTML = '<input id="toutput" placeholder="Output"></input>';
+        document.getElementById("hdoutput").innerHTML = '<br><br><input id="toutput" placeholder="Output"></input><span> Training Output</span>';
     };
 
     function tm() {
         trainingMode = document.getElementById("trainingMode").checked;
-        document.getElementById("hdoutput").innerHTML = '<input id="toutput" placeholder="Output"></input>';
+        document.getElementById("hdoutput").innerHTML = '<br><br><input id="toutput" placeholder="Output"></input><span> Training Output</span>';
     }
 
     function rim() {
@@ -197,23 +197,27 @@
     }
 </script>
 <form action="javascript:start()">
-    <span>Train</span>
     <input id="trainingMode" type="radio" name="radio" onclick="tm()">
+    <span>Train</span>
     <br>
-    <span>Real Input</span>
     <input id="realInputMode" type="radio" name="radio" onclick="rim()">
+    <span>Real Input</span>
     <br>
     <br>
     <input id="hiddenLayerSize" type="input" autocomplete="off" placeholder="Hidden Layer Size">
+    <span>Hidden Layer Size</span>
     <br>
     <br>
     <input id="numIterations" type="input" autocomplete="off" placeholder="Number of Iterations">
+     <span>Number of Iterations</span>
     <br>
     <br>
     <input id="alphaValue" type="input" autocomplete="off" placeholder="Learning Rate">
+    <span>Learning Rate (Alpha)</span>
     <br>
     <br>
     <input id="input" autocomplete="off" placeholder="Input"></input>
+    <span>Input</span>
     <span id="hdoutput"></span>
     <p id="output"></p>
     <input type="submit"></input>
