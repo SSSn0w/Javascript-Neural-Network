@@ -140,6 +140,7 @@
 
         alpha = getValues(document.getElementById("alphaValue").value.split(" ").map(Number));
         hiddenSize = getValues(document.getElementById("hiddenLayerSize").value.split(" ").map(Number));
+        numIterations = getValues(document.getElementById("numIterations").value.split(" ").map(Number));
 
         input = getValues(document.getElementById("input").value.split(" ").map(Number));
 
@@ -160,7 +161,7 @@
             weights0 = init_weights(inputSize, hiddenSize);
             weights1 = init_weights(hiddenSize, outputSize);
 
-            for(var i = 0; i < 6000; i++) {
+            for(var i = 0; i < numIterations; i++) {
                 layer0 = input;
                 layer1 = sigDot(dot(layer0, weights0));
                 layer2 = sigDot(dot(layer1, weights1));
@@ -204,6 +205,9 @@
     <br>
     <br>
     <input id="hiddenLayerSize" type="input" autocomplete="off" placeholder="Hidden Layer Size">
+    <br>
+    <br>
+    <input id="numIterations" type="input" autocomplete="off" placeholder="Number of Iterations">
     <br>
     <br>
     <input id="alphaValue" type="input" autocomplete="off" placeholder="Learning Rate">
